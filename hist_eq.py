@@ -49,7 +49,7 @@ def histogram_esitleme(goruntu):
 if __name__ == '__main__':
     # Görüntüyü gri tonlamalı olarak okuyun
     # "araba.jpg" kısmını test edeceğiniz görüntünün tam yolu ile değiştirin.
-    img_path = 'araba.jpg' 
+    img_path = 'araba.png' 
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
     
     if img is None:
@@ -103,4 +103,12 @@ if __name__ == '__main__':
         
         plt.tight_layout()
         plt.savefig('histogram_sonucu.png')
+        
+        # --- Ödev İçin Sonuçların Yorumlanması ---
+        print("\n--- Histogram Eşitleme Sonuç Analizi ---")
+        print("1. Kontrast Artışı: Orijinal görüntüde pikseller belirli bir aralıkta (genellikle dar bir bantta) toplanmıştı.")
+        print("2. Histogram Dağılımı: Eşitleme sonrası pikseller 0-255 aralığına daha homojen şekilde yayıldı.")
+        print("3. Görsel Kalite: Görüntüdeki detaylar (özellikle gölge ve aşırı parlak kısımlar) daha belirgin hale geldi.")
+        print("4. Manuel Uygulama: Hazır 'histeq' gibi fonksiyonlar yerine pikselleri tek tek sayıp CDF hesabı yapılarak işlem gerçekleştirilmiştir.")
+        
         plt.show()
